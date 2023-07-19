@@ -6,3 +6,6 @@ let user2:[number, string, boolean, number] = [2,"Maria",true,25];
 //matrice di tuple
 
 let users:[number, string, boolean, number][] = [user, user2];
+
+console.log(users);
+
