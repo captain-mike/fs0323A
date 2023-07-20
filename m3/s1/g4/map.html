@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let pizze = [
+            'Margherita',
+            'Diavola',
+            'Marinara'
+        ]
+
+        pizze = pizze.map(p => `<b>${p}</b>`);
+        
+        pizze.forEach(p => document.write(p + '<br>'));
+
+    </script>
+</body>
+</html>
