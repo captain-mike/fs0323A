@@ -1,0 +1,19 @@
+<div class="app-header"></div><!--Il selettore del componente header è tarato in modo che si attivi quando un elemento ha la classe app-header-->
+
+<h1>{{title}}</h1><!--Mostro il contenuto della proprietà title-->
+
+<input type="text" name="title"
+[(ngModel)]="title"
+placeholder="Scrivi il titolo">
+
+<!--ngModel lo studieremo, ma di base si collega all'app title, così modificando il valore dell'input il valore si aggiorna in tutti i punti in cui abbiamo utilizzato title-->
+
+<div>Testo Rosso</div><!--Controlla l'scss, una regola modifica il colore dei div-->
+
+
+
+{{pizze | json}}<!--siccome pizze contiene oggetti faccio una conversione in json al volo per vedere il contenuto-->
+
+<div *ngFor="let pizza of pizze"><!--Ciclo l'array pizze per mostrare un div per ogni pizza-->
+  {{pizza.gusto}}
+</div>
