@@ -1,0 +1,35 @@
+<!--
+  La classe alert rimane sempre
+  La classe  alert-success appare solo se la prop succes == true
+-->
+<div
+class="alert"
+(mouseover)="success = !success"
+[class.alert-danger]="!success"
+[class.alert-success]="success"
+>
+Div con classi alternate 1
+</div>
+
+<!--ngClass è una direttiva che permette di definire un oggetto contenente classi da associare all'oggetto div, appariranno però solo se gli sarà fornito un valore bool true-->
+<div
+(mouseover)="success = !success"
+[ngClass]="{'alert':true, 'alert-success':success,'alert-danger':!success}"
+>
+Div con classi alternate 2
+</div>
+
+<!--
+
+  NG STYLE NON DEVE ESSERE UN SOSTITUTO DEL NORMALE CSS
+
+-->
+<div
+(click)="color = 'red'"
+[ngStyle]="{
+  'background-color':'yellow',
+  'color':color
+}"
+>
+Div con classi alternate 2
+</div>

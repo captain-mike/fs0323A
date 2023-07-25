@@ -1,0 +1,17 @@
+
+<form>
+
+  <input type="text" name="nome" [(ngModel)]="newUser.nome" class="formcontrol">
+  <input type="text" name="cognome" [(ngModel)]="newUser.cognome" class="formcontrol">
+
+  <button class="btn btn-primary"
+  (click)="invia()">Inserisci</button>
+
+</form>
+
+<table>
+  <tr *ngFor="let user of getUsers()">
+    <td>{{user.nome}}</td>
+    <td>{{user.cognome}}</td>
+  </tr>
+</table>

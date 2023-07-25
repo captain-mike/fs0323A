@@ -1,0 +1,38 @@
+<main class="container">
+
+  <button
+  (click)="saluta()"
+  class="btn btn-primary"> Click </button>
+  <hr>
+
+  <button
+  (click)="toggle = !toggle"
+  [innerHTML]="cambiaTesto()"
+  class="btn btn-info"></button>
+
+  <div *ngIf="toggle">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore ducimus maiores qui aperiam, doloremque natus, pariatur porro placeat recusandae, hic numquam animi fuga. Modi assumenda et laboriosam placeat nostrum dolorem!</div>
+
+  <hr>
+  <!--Interpolazione stringhe-->
+
+  {{title}}
+
+  <hr>
+  <!--attributi-->
+
+  <img [src]="immagine" width="100">
+
+  <hr>
+
+  <app-slider></app-slider>
+
+
+  <hr>
+
+  <app-style-class></app-style-class>
+
+  <hr>
+
+  <app-form></app-form>
+
+</main>
