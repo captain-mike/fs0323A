@@ -1,0 +1,13 @@
+Lo scopo di questa app è quella di creare una crud fatta con fetch() completa di view, basata su json server.
+Nella cartella pages troverai tutti i componenti adibiti a pagine, che di fatto trovano il loro posto tra le rotte del file app-routing.module.ts
+
+
+AGGIORNA SPESSO PERCHé FAREMO MODIFICHE MAN MANO CHE SI VA AVANTI CON LE LEZIONI DI QUESTA SETTIMANA
+
+Importante: è tutto basato su json-server e ho lasciato un txt apposito per quello
+
+
+Per il funzionamento della crud vedi i files:
+
+pizza.service.ts => metodi e chiamate
+pizza.ts => modello della pizza
