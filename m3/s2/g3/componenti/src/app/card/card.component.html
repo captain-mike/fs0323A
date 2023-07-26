@@ -1,0 +1,12 @@
+<div class="card col-6">
+
+  <img [src]="immagine" class="card-img-top"
+  [alt]="nome + ' ' + cognome">
+
+  <div class="card-body">
+    <h5 class="card-title">{{nome}} {{cognome}}</h5>
+    <app-bottone [testo]="'Mostra'"></app-bottone>
+    <button (click)="delete(id)" class="btn btn-danger">Elimina</button>
+  </div>
+
+</div>

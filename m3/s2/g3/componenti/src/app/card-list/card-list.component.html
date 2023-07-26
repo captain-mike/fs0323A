@@ -1,0 +1,15 @@
+<div class="container-fluid">
+
+  <div class="row">
+
+      <app-card *ngFor="let user of users"
+      [id]="user.id"
+      [nome]="user.nome"
+      [cognome]="user.cognome"
+      [immagine]="user.foto"
+      (onDelete)="removeUser($event)"
+      ></app-card>
+
+
+  </div>
+</div>

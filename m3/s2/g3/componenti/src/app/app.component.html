@@ -1,0 +1,32 @@
+<app-card-list></app-card-list>
+<app-bottone [testo]="'Clicca qui'"></app-bottone>
+<app-bottone [testo]="'Elimina'"></app-bottone>
+
+
+<hr>
+
+<app-modal-proiezione>
+  <b>Ecco il contenuto della modale</b>
+</app-modal-proiezione>
+
+
+<app-modal-proiezione-multi>
+    <b slot="titolo">Ecco il titolo della modale</b>
+    <p slot="body">
+      Questo è il testo della modale
+    </p>
+</app-modal-proiezione-multi>
+
+<hr>
+
+
+<div #elemento>
+  Elemento marchiato
+</div>
+
+<hr>
+
+
+<app-content-child>
+  <p #paragrafo>Testo del paragrafo priettato</p>
+</app-content-child>
