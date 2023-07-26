@@ -1,5 +1,5 @@
 1. lancia il comando "npm i json-server" per installare il pacchetto
-2. crea un file chiamato db.json direttamente nella cartella radice di angular(per capisci: allo stesso livello di package.json)
+2. crea un file chiamato db.json direttamente nella cartella radice di angular(per capirci: allo stesso livello di package.json)
 3. edita il package.json aggiungendo sotto "scripts" la seguente riga, che faciliterà l'utilizzo: "backend":"json-server db.json -w" (osserva il package.json di questo progetto per un esempio)
 4. A questo punto scrivi nel terminale: npm run backend
 5. Se vuoi in alternativa ai punti 2-3 lancia questo comando direttamente nel terminale: json-server db.json -w
