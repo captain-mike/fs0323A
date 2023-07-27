@@ -1,5 +1,9 @@
 {
-
-  "pizza":[]
-
+  "pizza": [
+    {
+      "gusto": "Diavola",
+      "prezzo": "1",
+      "id": 3
+    }
+  ]
 }

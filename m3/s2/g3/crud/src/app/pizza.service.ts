@@ -14,9 +14,19 @@ export class PizzaService {
     return fetch(this.apiUrl).then(res => res.json());
   }
 
-  create(pizza:Pizza):Promise<Pizza>{
+  create(pizza:Partial<Pizza>):Promise<Pizza>{
     return fetch(this.apiUrl,{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(pizza)
+    }).then(res => res.json());
+  }
+
+  delete(pizza:Pizza){
+    return fetch(this.apiUrl+'/'+pizza.id,{
+      method: 'DELETE'
     }).then(res => res.json());
   }
 

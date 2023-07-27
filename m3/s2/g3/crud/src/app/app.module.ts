@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { AddPizzaComponent } from './pages/add-pizza/add-pizza.component';
 import { EditPizzaComponent } from './pages/edit-pizza/edit-pizza.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { EditPizzaComponent } from './pages/edit-pizza/edit-pizza.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,8 +1,22 @@
 <form>
 
-  <input type="text" name="gusto" placeholder="gusto" class="form-control">
-  <input type="text" name="prezzo" placeholder="prezzo" class="form-control">
+  <input type="text" name="gusto"
+  [(ngModel)]="newPizza.gusto"
+  placeholder="gusto" class="form-control">
 
-  <button class="btn btn-primary">Crea</button>
+  <input type="text" name="prezzo"
+  [(ngModel)]="newPizza.prezzo"
+  placeholder="prezzo" class="form-control">
+  <!--Ricorda che se usi ngModel devi prima importare FormsModule in app.module.ts-->
+
+  <button (click)="creaPizza()" class="btn btn-primary" [disabled]="check()">Crea</button>
+  <!--uso la funzione check per verificare se i campi sono validi, in caso contrario disabled passa a true, disabilitando il campo-->
 
 </form>
+<!--
+  ngIf sta controllando message, il cui valore iniziale è di stringa vuota, che mappa ad un valore mooleano false
+  In caso il messaggio venga cambiato, la stringa mapperà a true mostrando tutto il div, comprensivo di messaggio
+-->
+<div *ngIf="message" class="alert alert-success">
+  {{message}}
+</div>

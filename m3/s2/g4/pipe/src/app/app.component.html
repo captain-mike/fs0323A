@@ -1,0 +1,29 @@
+<p appColora [colore]="'#ccc'">Elemento con la direttiva colora</p>
+<p appColora [colore]="'blue'">Elemento con la direttiva colora</p>
+<p appColora [colore]="'red'">Elemento con la direttiva colora</p>
+
+
+<button appEvento>In attesa di un evento</button>
+
+
+<div *ngNotIf="false">
+  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident inventore neque exercitationem, fugiat explicabo voluptates sed obcaecati modi, iste dolorum, debitis consequuntur. Assumenda eos harum reiciendis! Omnis illo ratione asperiores.
+</div>
+
+<hr>
+<h1>Pipes</h1>
+{{pizza | json}}
+
+<hr>
+
+{{pizza.prezzo | currency : 'INR' : 'code'}}
+
+<hr>
+
+{{oggi | date : 'dd/MM/y'}}
+
+<hr>
+
+{{testo | cut}}
+
+
