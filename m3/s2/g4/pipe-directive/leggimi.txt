@@ -1,0 +1,4 @@
+Questo progetto è stato creato solo per vedere all'opera la creazione di pipes e direttive, quindi osserva solo i files
+.directive.ts e . pipe.ts
+
+Il markup su cui testiamo le direttive è tutto nell'app.component
