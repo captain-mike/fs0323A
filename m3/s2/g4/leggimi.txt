@@ -1,0 +1,3 @@
+Il progetto /stili risposta esempi della View Encapsulation
+
+Mentre /pipe-directives contiene esempi di direttive e pipe
