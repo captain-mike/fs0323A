@@ -10,14 +10,14 @@ export class NgNotIfDirective {
     private containerRef: ViewContainerRef//il contenitore
   ) { }
 
-  @Input() set ngNotIf(variabile:boolean){
+  @Input() set ngNotIf(variabile:boolean){//il metodo ngNotIf di fatto permette di creare una sintassi simile a quella del *ngIf, e riceve un booleano
 
-    if(!variabile){
+    if(!variabile){//se il booleano è false
       //è come fare append() o after()/before()
-      this.containerRef.createEmbeddedView(this.templateRef);
+      this.containerRef.createEmbeddedView(this.templateRef);//ricreo l'elemento, che ora è visibile
     }else{
       //è come fare DOMelement.remove()
-      this.containerRef.clear();
+      this.containerRef.clear();//distruggo l'elemento
     }
 
   }
