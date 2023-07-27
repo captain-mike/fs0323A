@@ -7,7 +7,7 @@ export class NgNotIfDirective {
 
   constructor(
     private templateRef: TemplateRef<any>,//tipizzando come templateRef facciamo riferimento all'elemento associato alla direttiva
-    private containerRef: ViewContainerRef//il contenitore
+    private containerRef: ViewContainerRef//il contenitore dell'elemento a cui applichiamo la direttiva
   ) { }
 
   @Input() set ngNotIf(variabile:boolean){//il metodo ngNotIf di fatto permette di creare una sintassi simile a quella del *ngIf, e riceve un booleano
