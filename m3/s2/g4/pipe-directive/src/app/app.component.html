@@ -12,18 +12,18 @@
 
 <hr>
 <h1>Pipes</h1>
-{{pizza | json}}
+{{pizza | json}}<!--trasformo l'oggetto in json prima di mostrarlo-->
 
 <hr>
 
-{{pizza.prezzo | currency : 'INR' : 'code'}}
+{{pizza.prezzo | currency : 'INR' : 'code'}}<!--Aggiungo la valuta (Rupia indiana) prima di mostrare il prezzo-->
 
 <hr>
 
-{{oggi | date : 'dd/MM/y'}}
+{{oggi | date : 'dd/MM/y'}}<!--Cambio formato della data prima di mostrarla. Osserva nel .ts del componente per sapere cosa contengono queste variabili-->
 
 <hr>
 
-{{testo | cut}}
+{{testo | cut}}<!--custom directive, vedi file cut.pipe.ts-->
 
 
