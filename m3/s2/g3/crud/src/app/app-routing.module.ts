@@ -20,9 +20,9 @@ const routes: Routes = [
     component:AddPizzaComponent
   },
   {
-    path:'edit',
-    component:EditPizzaComponent
-  },
+    path:'edit/:id',
+    component:EditPizzaComponent,
+  }
 ];
 
 @NgModule({

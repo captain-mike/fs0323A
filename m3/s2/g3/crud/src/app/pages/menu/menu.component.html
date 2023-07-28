@@ -11,7 +11,7 @@
     <td>{{pizza.gusto}}</td>
     <td>{{pizza.prezzo | currency : 'EUR'}}</td>
     <td>
-      <button class="btn btn-warning">Modifica</button>
+      <a [routerLink]="['/edit', pizza.id]" class="btn btn-warning">Modifica</a>
       <button class="btn btn-danger" (click)="eliminaPizza(pizza)">Elimina</button><!--controlla nel .ts cosa fa questo metodo-->
     </td>
   </tr>

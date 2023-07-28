@@ -4,6 +4,11 @@
       "gusto": "Diavola",
       "prezzo": "1",
       "id": 3
+    },
+    {
+      "gusto": "Mimosa",
+      "prezzo": "10",
+      "id": 4
     }
   ]
 }
