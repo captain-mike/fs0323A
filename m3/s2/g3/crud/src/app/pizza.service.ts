@@ -16,6 +16,8 @@ export class PizzaService {
 
   getById(id:number):Promise<Pizza>{
     return fetch(this.apiUrl+'?id='+id).then(res => res.json());
+    //utilizzo un query param per ottenere i dati già filtrati, siccome il nostro backend lo permette
+    //l'url così composto potrebbe essere: http://localhost:3000/pizza?id=1 se 1 è l'id della pizza
   }
 
   create(pizza:Partial<Pizza>):Promise<Pizza>{
@@ -29,8 +31,8 @@ export class PizzaService {
   }
 
   update(pizza:Pizza):Promise<Pizza>{
-    return fetch(this.apiUrl+'/'+pizza.id,{
-      method: 'PUT',
+    return fetch(this.apiUrl+'/'+pizza.id,{//l'url così composto potrebbe essere: http://localhost:3000/pizza/1 se 1 è l'id della pizza
+      method: 'PUT',//richiesta di modifica
       headers: {
         'Content-Type': 'application/json'
       },

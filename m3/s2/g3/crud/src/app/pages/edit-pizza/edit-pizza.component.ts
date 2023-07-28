@@ -14,16 +14,18 @@ export class EditPizzaComponent {
 
   constructor(
     private pizzaSvc: PizzaService,
-    private route:ActivatedRoute
+    private route:ActivatedRoute//mi servirà per poter leggere i parametri della rotta
   ){}
 
   ngOnInit(){
+    //this.route.params restituisce un observable quindi possiamo/dobbiamo usare subscribe come metodo per gestire il dato asincrono in arrivo
+    this.route.params.subscribe((params:any) => {//tipizziamo params ad any per spegnere gli errori
 
-    this.route.params.subscribe((params:any) => {
-
+      //una volta letti i dati della rotta li uso per chiedere al service di usare il metodo get by id, fornendo params.id come argomento(id recuperato dalla rotta attuale)
+      //in questo modo recupererà la pizza che voglio modificare
       this.pizzaSvc.getById(params.id).then(res => {
 
-        this.pizza = res;
+        this.pizza = res;//arrivata la pizza dal server la assegno alla variabile d'istanza "pizza"
 
       })
 
