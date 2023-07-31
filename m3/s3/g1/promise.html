@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        let promise = new Promise((resolve)=>{
+
+            setInterval(()=>{
+                resolve('ciao')
+            },2000)
+
+        });
+
+        promise.then(risultato => console.log(risultato))
+        promise.then(risultato => console.log(risultato))
+        promise.then(risultato => console.log(risultato))
+        promise.then(risultato => console.log(risultato))
+
+
+        console.log(promise);
+
+        let todo;
+
+        fetch('https://jsonplaceholder.typicode.com/todos/1')
+        .then(response => response.json())
+        .then(json => {
+
+            todo = json;
+
+        })
+
+        console.log(todo);
+
+        async function call(){
+            let todo = await fetch('https://jsonplaceholder.typicode.com/todos/1').then(response => response.json())
+            console.log(todo);
+        }
+
+
+        let oggetto = {
+            nome:'Mario',
+            cognome:'Rossi',
+        }
+
+        let json = JSON.stringify(oggetto)
+        
+        console.log(json);
+        
+        let jsonToObj = JSON.parse(json)
+        
+        console.log(jsonToObj);
+
+    </script>
+</body>
+</html>
