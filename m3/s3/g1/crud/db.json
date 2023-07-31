@@ -1,0 +1,10 @@
+{
+  "pizza": [
+    {
+      "gusto": "Mimosa",
+      "prezzo": "10",
+      "id": 4
+    }
+  ],
+  "utenti": []
+}

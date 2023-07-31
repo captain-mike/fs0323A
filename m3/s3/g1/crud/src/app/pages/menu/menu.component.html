@@ -1,0 +1,21 @@
+
+<a routerLink="/add" class="btn btn-success"> ++ Crea pizza ++</a>
+
+<table class="table table-striped table-bordered">
+  <tr>
+    <th>Gusto</th>
+    <th>Prezzo</th>
+    <th>Azioni</th>
+  </tr>
+  <tr *ngFor="let pizza of pizze"><!--ciclo tutte le pizze e ne mostro i valori-->
+    <td>{{pizza.gusto}}</td>
+    <td>{{pizza.prezzo | currency : 'EUR'}}</td>
+    <td>
+      <a [routerLink]="['/edit', pizza.id]" class="btn btn-warning">Modifica</a>
+      <button class="btn btn-danger" (click)="eliminaPizza(pizza)">Elimina</button><!--controlla nel .ts cosa fa questo metodo-->
+    </td>
+  </tr>
+</table>
+
+<!--ngIf sta controllando che la lunghezza dell'array pizze sia a zero, se diversa da zero l'intero div sparirà-->
+<div *ngIf="!pizze.length">Caricamento in corso..</div>
