@@ -43,7 +43,9 @@ export class ReactiveFormsComponent {
 
 
 
-
+/**
+ * metodi per la gestione dei campi sport
+ */
   addSport(){
     let control = new FormControl(null);//creo un campo per il form
     (this.form.get('sports') as FormArray).push(control);//accedo all'array sports della riga 31 e aggiungo il campo appena creato
@@ -51,6 +53,21 @@ export class ReactiveFormsComponent {
 
   getSports(){
     return (this.form.get('sports') as FormArray).controls;//restituisce tutti i campi nell'array sports
+  }
+
+
+
+
+
+  /**
+   * vetodi per la gestione della validazione
+  */
+
+  isValid(fieldName: string) {
+   return this.form.get(fieldName)?.valid //true se il campo cercato è valido
+  }
+  isTouched(fieldName: string) {
+    return this.form.get(fieldName)?.touched //true se il campo cercato ha subito interazioni dall'utente
   }
 
   getMessage(fieldName: string) {
@@ -62,34 +79,24 @@ export class ReactiveFormsComponent {
 
 
 
-  isValid(fieldName: string) {
-    return this.form.get(fieldName)?.valid
-  }
-  isTouched(fieldName: string) {
-    return this.form.get(fieldName)?.touched
-  }
-
-
-
-
-
-
-
 
 
 
   emailProibite:string[] = ['mario@gmail.com','mirko@gmail.com'];
 
-  emailProibiteValidator = (formC:FormControl):ValidationErrors|null => {
+  //validatore custom sincrono
+  //verifica l'inserimento di e-mails presenti nell'array della riga 85
+  emailProibiteValidator = (formC:FormControl):ValidationErrors|null => {//formC sarà il campo a cui si collega il validatore
 
-    if(this.emailProibite.includes(formC.value)){
-      return {
+    if(this.emailProibite.includes(formC.value)){//se la mail inserita dall'utente viene trovata anche nell'array della riga 85
+      return {//restituisce un oggetto contenente dettagli della validazione
         invalid:true,
         message:'Email non utilizzabile'
       }
     }
 
-    return null;
+    return null;//altrimnenti restituisce null
+    //null significa che non ci sono errori di inserimento da parte dell'utente
 
   }
 
