@@ -100,19 +100,21 @@ export class ReactiveFormsComponent {
 
   }
 
+  //validatore asincrono
+  //simula la richiesta al server per verificare se la mail inserita è già in uso
   emailEsistente(formC:AbstractControl) {
 
-    return new Promise<ValidationErrors|null>((resolve, reject) => {
+    return new Promise<ValidationErrors|null>((resolve, reject) => {//con la promise possiamo rendere asincrona l'esecuzione
 
-      setTimeout(()=>{
+      setTimeout(()=>{//simuliamo l'attesa dovuta ad una chiamata ajax
 
-        if(formC.value == 'prova@test.it'){
-          resolve({
+        if(formC.value == 'prova@test.it'){//creo una situazione in cui la validazione si attiva
+          resolve({//in caso di successo invio i dettagli dell'errore
             invalid:true,
             message:'Email già presente'
           })
         }else{
-          reject(null);
+          reject(null);//se la validazione non si attiva invio null
         }
 
       }, 2000)
