@@ -35,7 +35,7 @@ export class Page1Component {
 
 
     this.sub = intervallo
-    .pipe(
+    .pipe(//grazie a pipe possiamo filtrare/modificare i dati prima che questi arrivino al subscriber
       filter(x => (x as number) > 1 ),
       map( x => `Siamo al numero  ${x}`),
       )
@@ -49,7 +49,7 @@ export class Page1Component {
 
 
   ngOnDestroy(){
-    this.sub.unsubscribe();//prevengo iscrizioni multiple
+    this.sub.unsubscribe();//prevengo iscrizioni multiple annullando la subscription ogni volta che il componente viene distrutto
   }
 
 

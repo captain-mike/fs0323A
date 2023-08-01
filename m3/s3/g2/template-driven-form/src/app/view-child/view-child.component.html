@@ -1,0 +1,85 @@
+<!--ngSubmit scatena update() ad ogni submit del form-->
+<form (ngSubmit)="submit(f)" #f="ngForm">
+
+  <div class="form-group">
+
+    <input type="text" #name="ngModel" ngModel class="form-control"
+    placeholder="Il tuo nome" required name="nome">
+    <!--
+          #username="ngModel"
+          con questa dicitura noi identifichiamo il campo con la variabile #username e indichiamo che si riferisce ad una istanza di ngModel
+
+        username.invalid && username.touched
+        con questa condizione il tag appare solo se dopo essere stato "toccato" il suo valore non è ancora valido
+      -->
+    <span *ngIf="name.invalid && name.touched">Devi inserire il nome</span>
+  </div>
+
+  <div class="form-group">
+    <input type="text" #cognome="ngModel" ngModel class="form-control"
+    placeholder="Il tuo cognome" name="cognome">
+    <span *ngIf="cognome.invalid && cognome.touched">Devi inserire il cognome</span>
+  </div>
+
+  <div ngModelGroup="authData" class="form-row row" #authGroup="ngModelGroup">
+
+      <div class="form-group col-6">
+        <input type="email" required ngModel class="form-control"
+        placeholder="La tua mail" name="email">
+      </div>
+
+      <div class="form-group col-6">
+
+        <input type="password" required ngModel class="form-control"
+        placeholder="La tua password" name="password">
+      </div>
+
+      <span *ngIf="authGroup.invalid && authGroup.touched">Dati non corretti</span>
+  </div>
+
+  <div class="form-row row">
+    <div class="form-group col-6">
+
+      <select name="city" ngModel class="form-control">
+        <option value="">--scegli città--</option>
+        <option value="milano">Milano</option>
+        <option value="roma">Roma</option>
+        <option value="napoli">Napoli</option>
+      </select>
+    </div>
+
+    <div class="form-group col-6">
+
+      <input type="number" ngModel class="form-control"
+      placeholder="cap" name="cap">
+      <span></span>
+
+    </div>
+
+
+    <div class="form-group">
+
+      <div class="form-check">
+         <!--in quest'area stiamo semplicemente generando un input radio per ogni genere nell'array generi-->
+        <div *ngFor="let genere of generi">
+          <label class="form-check-label" [for]="genere">{{genere}}</label>
+
+          <input type="radio"
+          [id]="genere" [value]="genere"
+          ngModel name="genere" class="form-check-input">
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <button type="button" class="btn btn-danger"
+  (click)="setDati()"
+  >Fill</button>
+
+  <!--f si riferisce al form (riga 2)-->
+  <button [disabled]="f.invalid" class="btn btn-primary">Invia</button>
+
+</form>

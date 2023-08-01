@@ -1,0 +1,49 @@
+<!--ngSubmit scatena update() ad ogni submit del form-->
+<form [formGroup]="form">
+
+  <div class="form-group">
+
+    <input type="text" formControlName="nome" class="form-control"
+    placeholder="Il tuo nome">
+    <span *ngIf="!isValid('nome') && isTouched('nome')" class="form-control">Devi inserire il nome</span>
+  </div>
+
+  <div class="form-group">
+
+      <div formGroupName="authData" class="form-row row">
+
+          <div class="form-group col-6">
+            <input type="email" class="form-control"
+            placeholder="La tua mail" (keyup)="getMessage('authData.email')" formControlName="email">
+            <div *ngIf="getMessage('authData.email')">
+              {{getMessage('authData.email')}}
+            </div>
+          </div>
+
+          <div class="form-group col-6">
+
+            <input type="password" class="form-control"
+            placeholder="La tua password" formControlName="password">
+          </div>
+
+          <span *ngIf="!isValid('authData')">Dati non corretti</span>
+      </div>
+
+
+      <div formArrayName="sports">
+        <h5>Sport praticati</h5>
+        <button class="btn btn-warning" (click)="addSport()">Aggiungi Sport</button>
+        <div class="form-group" *ngFor="let sport of getSports(); let i = index">
+          <input type="text" class="form-control" [formControlName]="i">
+        </div>
+      </div>
+
+  </div>
+
+
+
+
+  <!--f si riferisce al form (riga 2)-->
+  <button (click)="send()" class="btn btn-primary">Invia</button>
+
+</form>

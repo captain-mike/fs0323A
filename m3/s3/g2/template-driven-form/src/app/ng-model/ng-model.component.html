@@ -1,0 +1,15 @@
+<form>
+
+  <input type="text" class="form-control"
+  placeholder="Il tuo nome" name="nome" [(ngModel)]="nome">
+
+  <input type="text" class="form-control"
+  placeholder="Il tuo cognome" name="cognome" [(ngModel)]="cognome">
+
+  <button (click)="submit()" class="btn btn-primary">Invia</button>
+
+</form>
+
+
+Il nome è {{nome}}<br>
+Il cognome è {{cognome}}
