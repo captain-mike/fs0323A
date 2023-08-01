@@ -11,30 +11,30 @@ export class ReactiveFormsComponent {
   form!:FormGroup;
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder//formBuilder permette di creare forms reattivi
   ){}
 
 
   ngOnInit(){
 
-    this.form = this.fb.group({
-      nome:this.fb.control(null, [Validators.required]),
-      authData: this.fb.group({
-        email: this.fb.control(
-          null,
-          [Validators.required,Validators.email, this.emailProibiteValidator],//sincroni
-          this.emailEsistente//asincrono
+
+    this.form = this.fb.group({//il form
+      nome:this.fb.control(null, [Validators.required]),//campo nome
+      authData: this.fb.group({//il form group chiamato authData
+        email: this.fb.control(//campo e-mail
+          null,//valore del campo
+          [Validators.required,Validators.email, this.emailProibiteValidator],//validatori sincroni
+          this.emailEsistente//validatore asincrono
           ),
-        password: this.fb.control(null)
+        password: this.fb.control(null)//il campo password
       }),
-      sports: this.fb.array([])
+      sports: this.fb.array([])//un array di campi, vuoto ma ne aggiungeremo successivamente
     })
 
   }
 
   send(){
-    console.log(this.form);
-
+    console.log(this.form.value);//mostra i valori inseriti
   }
 
 
@@ -45,22 +45,17 @@ export class ReactiveFormsComponent {
 
 
   addSport(){
-    let control = new FormControl(null);
-    (this.form.get('sports') as FormArray).push(control);
+    let control = new FormControl(null);//creo un campo per il form
+    (this.form.get('sports') as FormArray).push(control);//accedo all'array sports della riga 31 e aggiungo il campo appena creato
   }
 
   getSports(){
-    return (this.form.get('sports') as FormArray).controls;
+    return (this.form.get('sports') as FormArray).controls;//restituisce tutti i campi nell'array sports
   }
 
   getMessage(fieldName: string) {
-      return this.form.get(fieldName)?.errors!['message']
+      return this.form.get(fieldName)?.errors!['message']//restituisce il messaggio di errore dei custom validators
   }
-
-
-
-
-
 
 
 
