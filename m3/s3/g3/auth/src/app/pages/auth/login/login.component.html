@@ -1,0 +1,10 @@
+
+<form>
+
+  <input type="email" class="form-control" placeholder="Email" name="email" [(ngModel)]="formData.email">
+  <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="formData.password">
+  <button (click)="login()" class="btn btn-success">Accedi</button>
+
+</form>
+
+<a class="btn btn-secondary" routerLink="/auth">Indietro</a>
