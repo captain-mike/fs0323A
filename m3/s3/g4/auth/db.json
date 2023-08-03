@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "email": "vojo@mailinator.com",
+      "password": "$2a$10$EFqm37ffgH9Xv4BJi.TZp.gjddSCENtd6OXco9B4IU5K3vOYWzjn2",
+      "nome": "Sint adipisci debiti",
+      "cognome": "Quo ab ut lorem adip",
+      "id": 1
+    },
+    {
+      "email": "xaci@mailinator.com",
+      "password": "$2a$10$X2p11yAkku8X4Mqfym9v7ukPeGGGWKuDIBkPgYjrBPJ277dvXlgUq",
+      "nome": "Voluptatem voluptat",
+      "cognome": "Similique itaque imp",
+      "id": 2
+    },
+    {
+      "email": "zozido@mailinator.com",
+      "password": "$2a$10$8TBG.3NubQcK/7hOLLvVuurgH1EgZzZJBJattiz/Hh2pi6wt2tN9W",
+      "nome": "Cillum dolore volupt",
+      "cognome": "Quo quam error omnis",
+      "id": 3
+    },
+    {
+      "email": "varyfewe@mailinator.com",
+      "password": "$2a$10$kAtt09OoUwpyj8KZI9ZDxuEY.ivQTscq72PcKyrm2/N2/7a22Qghq",
+      "nome": "Qui ducimus volupta",
+      "cognome": "Velit voluptatem Qu",
+      "id": 4
+    }
+  ]
+}
